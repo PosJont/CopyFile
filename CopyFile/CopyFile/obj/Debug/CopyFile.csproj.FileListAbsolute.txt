@@ -1,0 +1,10 @@
+C:\PRG_bak\GitHub\發行\CopyFile\CopyFile\CopyFile\bin\Debug\CopyFile.exe.config
+C:\PRG_bak\GitHub\發行\CopyFile\CopyFile\CopyFile\bin\Debug\CopyFile.exe
+C:\PRG_bak\GitHub\發行\CopyFile\CopyFile\CopyFile\bin\Debug\CopyFile.pdb
+C:\PRG_bak\GitHub\發行\CopyFile\CopyFile\CopyFile\obj\Debug\CopyFile.csproj.AssemblyReference.cache
+C:\PRG_bak\GitHub\發行\CopyFile\CopyFile\CopyFile\obj\Debug\CopyFile.mainForm.resources
+C:\PRG_bak\GitHub\發行\CopyFile\CopyFile\CopyFile\obj\Debug\CopyFile.Properties.Resources.resources
+C:\PRG_bak\GitHub\發行\CopyFile\CopyFile\CopyFile\obj\Debug\CopyFile.csproj.GenerateResource.cache
+C:\PRG_bak\GitHub\發行\CopyFile\CopyFile\CopyFile\obj\Debug\CopyFile.csproj.CoreCompileInputs.cache
+C:\PRG_bak\GitHub\發行\CopyFile\CopyFile\CopyFile\obj\Debug\CopyFile.exe
+C:\PRG_bak\GitHub\發行\CopyFile\CopyFile\CopyFile\obj\Debug\CopyFile.pdb
