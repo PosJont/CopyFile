@@ -55,20 +55,34 @@ namespace CopyFile
 
         private void btn_AllCopy_Click(object sender, EventArgs e)
         {
+            btn_AllCopy.Enabled = false;
+            btn_Copy.Enabled = false;
+            btn_Exit.Enabled = false;
             DirectoryFileCopy(txt_Origin.Text,txt_Purpose.Text ,true);
+            MessageBox.Show("Done");
+            btn_AllCopy.Enabled = true;
+            btn_Copy.Enabled = true;
+            btn_Exit.Enabled = true;
         }
 
         private void btn_Copy_Click(object sender, EventArgs e)
         {
-            DirectoryFileCopy(txt_Origin.Text, txt_Purpose.Text, false);
+            btn_AllCopy.Enabled = false;
+            btn_Copy.Enabled = false;
+            btn_Exit.Enabled = false;
+            DirectoryFileCopy(txt_Origin.Text, txt_Purpose.Text, true,false);
+            MessageBox.Show("Done");
+            btn_AllCopy.Enabled = true;
+            btn_Copy.Enabled = true;
+            btn_Exit.Enabled = true;
         }
 
         //-------------------------------------------//
-        public void DirectoryFileCopy(string removeDir, string desDir, bool copySubDirs)
+        public void DirectoryFileCopy(string removeDir, string desDir, bool copySubDirs, bool AllDelete=true)
         {
             Stopwatch timer = new Stopwatch();
             timer.Start();
-            DirectoryCopy(removeDir, desDir, copySubDirs);
+            DirectoryCopy(removeDir, desDir, copySubDirs, AllDelete);
             timer.ElapsedMilliseconds.ToString();
             timer.Stop();
         }
@@ -93,7 +107,7 @@ namespace CopyFile
                     + sourceDirName);
             }
 
-            DirectoryInfo[] dirs = dir.GetDirectories();
+            DirectoryInfo[] dirs = dir.GetDirectories().Where(x=>!x.Name.Contains("git")).ToArray();
             if (AllDelete)
             {
                 //如果有存在的檔案，就會把他先刪除
@@ -124,10 +138,13 @@ namespace CopyFile
             else
             {
                 FileInfo[] files = dir.GetFiles();
-                FileInfo[] filesDest = dirDest.GetFiles();
                 foreach (FileInfo file in files)
                 {
-                    if(filesDest.Where(x=>x.Name == file.Name && x.LastWriteTime == file.LastWriteTime).Any()) break;
+                    if (!Directory.Exists(dirDest.FullName))
+                    {
+                        Directory.CreateDirectory(dirDest.FullName);
+                    }
+                    if (dirDest.GetFiles().Where(x=>x.Name == file.Name && x.LastWriteTime == file.LastWriteTime).Any()) break;
                     string tempPath = Path.Combine(destDirName, file.Name);
                     if (File.Exists(tempPath)) { File.Delete(tempPath); }
                     file.CopyTo(tempPath, false);

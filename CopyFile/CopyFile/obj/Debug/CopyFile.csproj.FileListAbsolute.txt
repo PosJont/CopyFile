@@ -8,3 +8,4 @@ C:\PRG_bak\GitHub\發行\CopyFile\CopyFile\CopyFile\obj\Debug\CopyFile.csproj.Ge
 C:\PRG_bak\GitHub\發行\CopyFile\CopyFile\CopyFile\obj\Debug\CopyFile.csproj.CoreCompileInputs.cache
 C:\PRG_bak\GitHub\發行\CopyFile\CopyFile\CopyFile\obj\Debug\CopyFile.exe
 C:\PRG_bak\GitHub\發行\CopyFile\CopyFile\CopyFile\obj\Debug\CopyFile.pdb
+C:\PRG_bak\GitHub\發行\CopyFile\CopyFile\CopyFile\obj\Debug\CopyFile.csproj.SuggestedBindingRedirects.cache
